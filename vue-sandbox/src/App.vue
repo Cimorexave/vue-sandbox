@@ -1,4 +1,5 @@
 <template>
+  <!-- Everything here is the layout that is rendered around all views (routes)  -->
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
