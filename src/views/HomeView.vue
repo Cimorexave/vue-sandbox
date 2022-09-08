@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <el-card>
+  <div class="layout">
+    <el-card class="card">
       <template #header>
       <div class="card-header">
         <span>Your Tasks</span>
@@ -11,6 +11,7 @@
           <el-icon size="medium"><EditPen /></el-icon>
         </el-button>
         <el-dialog
+        id="dialog"
         v-model=" isDialogOpen "
         title="New Task"
         width=" 85% "
@@ -82,6 +83,12 @@ $text-clr : #2c3e50;
 $green-clr : #42b983;
 $bg-gray: #e7e7e7;
 
+@media screen and (min-width: 1024px) {
+  #dialog {
+    width: 30%;
+  }
+  
+}
 .card-header {
   display: flex;
   justify-content: space-between;
