@@ -2,7 +2,7 @@
     <nav>
       <div class="routes">
         <router-link to="/">Home</router-link> |
-        <router-link to="/history">History</router-link> 
+        <router-link to="/history">History</router-link>
       </div>
       <img src="@/assets/logo.png" alt="vue logo" id="logo">
     </nav>
