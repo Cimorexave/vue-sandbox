@@ -35,7 +35,7 @@ img {
   width: 10%;
   position: absolute;
   right: 1em;
-  animation: glowingVueLogo infinite alternate 2000ms;
+  animation: glowingVueLogo infinite alternate 2000ms ease-out;
 }
 
 nav {
