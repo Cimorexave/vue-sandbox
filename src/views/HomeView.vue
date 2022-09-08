@@ -27,7 +27,10 @@
         </el-dialog>
       </div>
     </template>
-    <div class="items"></div>
+    <div v-if="tasks.length < 2">You have no tasks</div>
+    <div v-else v-for=" task in tasks" :key="task.id" class="items">
+      <Task  :task="task" />
+    </div>
     </el-card>
   </div>
 </template>
@@ -37,18 +40,28 @@ import { template } from 'lodash';
 import { defineComponent } from 'vue';
 import { ElMessage } from 'element-plus';
 
+import Task from "../components/TaskComponent.vue";
+
 export default defineComponent({
   name: 'HomeView',
-  components: {},
+  components: {
+    Task,
+  },
   data() {
     return {
       isDialogOpen: false,
-      newTaskValue: ""
+      newTaskValue: "",
+      tasks: [{}],
     }
   },
   methods: {
     handleSubmit() {
       //submit it to data
+      this.tasks.push({
+        id: this.tasks.length +1,
+        description: this.newTaskValue,
+        isDone: false,
+      })
 
       //notifying the user that the task was added
       ElMessage({
