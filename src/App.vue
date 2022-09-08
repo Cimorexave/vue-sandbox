@@ -17,13 +17,18 @@
 $text-clr : #2c3e50;
 $green-clr : #42b983;
 $bg-gray: #e7e7e7;
-
+html, body {
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: SourceCodePro ,Avenir, Helvetica, Arial, sans-serif;
   color: $text-clr;
   background-color: $bg-gray;
-  height: 97vh;
-  width: 99vw;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 img {
   width: 10%;
