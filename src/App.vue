@@ -10,6 +10,7 @@
 
 <style lang="scss">
 
+
 @font-face {
     font-family: SourceCodePro;
     src: url('./assets/SourceCodePro-VariableFont_wght.ttf') format('truetype');
@@ -20,7 +21,7 @@
 }
 
 nav {
-  padding: 1em;
+  padding: 2em;
 
   a {
     font-weight: bold;
