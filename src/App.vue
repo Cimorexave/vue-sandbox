@@ -9,7 +9,8 @@
 </template>
 
 <style lang="scss">
-  @font-face {
+
+@font-face {
     font-family: SourceCodePro;
     src: url('./assets/SourceCodePro-VariableFont_wght.ttf') format('truetype');
   }
@@ -19,7 +20,7 @@
 }
 
 nav {
-  padding: 30px;
+  padding: 2em;
 
   a {
     font-weight: bold;
