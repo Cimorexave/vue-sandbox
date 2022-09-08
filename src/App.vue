@@ -20,7 +20,7 @@
 }
 
 nav {
-  padding: 2em;
+  padding: 1em;
 
   a {
     font-weight: bold;
