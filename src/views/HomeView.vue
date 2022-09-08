@@ -35,6 +35,7 @@
 <script lang="ts">
 import { template } from 'lodash';
 import { defineComponent } from 'vue';
+import { ElMessage } from 'element-plus';
 
 export default defineComponent({
   name: 'HomeView',
@@ -48,6 +49,12 @@ export default defineComponent({
   methods: {
     handleSubmit() {
       //submit it to data
+
+      //notifying the user that the task was added
+      ElMessage({
+        message: "Task Added.",
+        type: "success"
+      })
 
       //clear the input & exit the dialog
       this.newTaskValue= "";
