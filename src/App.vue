@@ -1,7 +1,10 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <img src="@/assets/logo.png" alt="vue logo" id="logo">
+    <div class="routes">
+      <router-link to="/history">History</router-link> |
+      <router-link to="/">Home</router-link> 
+    </div>
   </nav>
   <router-view/>
 </template>
@@ -11,21 +14,40 @@
   font-family: SourceCodePro;
   src: url("./assets/SourceCodePro-VariableFont_wght.ttf") format("truetype");
 }
+$text-clr : #2c3e50;
+$green-clr : #42b983;
+$bg-gray: #e7e7e7;
 
 #app {
   font-family: SourceCodePro ,Avenir, Helvetica, Arial, sans-serif;
-  color: #2c3e50;
+  color: $text-clr;
+  background-color: $bg-gray;
+  height: 97vh;
+  width: 99vw;
+}
+img {
+  width: 10%;
+  aspect-ratio: 1;
 }
 
 nav {
-  padding: 30px;
+  background-color: white;
+  padding: 1em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: $green-clr;
+  box-shadow: 3px 2px 2px;
+  border-radius: 0.2em;
+
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: $text-clr;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: $green-clr;
     }
   }
 }
