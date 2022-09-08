@@ -21,9 +21,12 @@ $text-clr : #2c3e50;
 $green-clr : #42b983;
 $bg-gray: #e7e7e7;
 @keyframes glowingVueLogo {
-  from {} 
+  from {
+    scale: 0.9;
+    opacity: 1;
+  } 
   to {
-    scale: 1.1;
+    scale: 1.2;
     opacity: 0;
   }
 }
@@ -34,8 +37,8 @@ img {
 #shadow-logo {
   width: 10%;
   position: absolute;
-  right: 1em;
-  animation: glowingVueLogo infinite alternate 2000ms ease-out;
+  right: 0.9em;
+  animation: glowingVueLogo infinite 2000ms ease-in;
 }
 
 nav {
