@@ -49,8 +49,9 @@ export default defineComponent({
     handleSubmit() {
       //submit it to data
 
-      //clear the input
+      //clear the input & exit the dialog
       this.newTaskValue= "";
+      this.isDialogOpen = false;
     }
   }
 });
