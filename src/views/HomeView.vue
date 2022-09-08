@@ -4,10 +4,27 @@
       <template #header>
       <div class="card-header">
         <span>Your Tasks</span>
-        <el-button size="large" round id="new-btn" type="success" >
+        <el-button size="large" round 
+        id="new-btn" type="success"
+        @click="isDialogOpen = true" >
           New
           <el-icon size="medium"><EditPen /></el-icon>
         </el-button>
+        <el-dialog
+        v-model=" isDialogOpen "
+        title="New Task"
+        width=" 85% "
+        >
+          <div class="form">
+            <el-input
+            id="input"
+            v-model="newTaskValue"
+            placeholder="Write..."
+            />
+            <el-button
+            type="success" @click="handleSubmit">Sumbit</el-button>
+          </div>
+        </el-dialog>
       </div>
     </template>
     <div class="items"></div>
@@ -19,10 +36,23 @@
 import { template } from 'lodash';
 import { defineComponent } from 'vue';
 
-import {Edit} from "@element-plus/icons-vue";
-
 export default defineComponent({
   name: 'HomeView',
+  components: {},
+  data() {
+    return {
+      isDialogOpen: false,
+      newTaskValue: ""
+    }
+  },
+  methods: {
+    handleSubmit() {
+      //submit it to data
+
+      //clear the input
+      this.newTaskValue= "";
+    }
+  }
 });
 </script>
 
@@ -50,5 +80,17 @@ span {
 .items {
   width: 100%;
   height: max-content;
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  align-items: center;
+  &.button {
+    height: auto;
+  }
+}
+#input {
+  padding: 1em;
 }
 </style>
