@@ -15,7 +15,10 @@
     export default defineComponent({
         name: "TaskComponent",
         props: {
-            task: Object as PropType<{id: number, description: string, isDone: boolean}>
+            task: {
+                type: Object as PropType<{id: number, description: string, isDone: boolean}>,
+                required: true,
+            }
         }
     })
 </script>
