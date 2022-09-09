@@ -11,12 +11,13 @@
 
 <script lang="ts">
     import {defineComponent, PropType} from "vue";
+    import TaskInterface from "@/types/task.interface";
     
     export default defineComponent({
         name: "TaskComponent",
         props: {
             task: {
-                type: Object as PropType<{id: number, description: string, isDone: boolean}>,
+                type: Object as PropType<TaskInterface>,
                 required: true,
             }
         }

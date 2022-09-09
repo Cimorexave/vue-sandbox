@@ -42,6 +42,7 @@ import { defineComponent } from 'vue';
 import { ElMessage } from 'element-plus';
 
 import Task from "../components/TaskComponent.vue";
+import TaskInterface from '@/types/task.interface';
 
 export default defineComponent({
   name: 'HomeView',
@@ -52,7 +53,7 @@ export default defineComponent({
     return {
       isDialogOpen: false,
       newTaskValue: "",
-      tasks: Array as unknown as Array<{id: number, description: string, isDone: boolean}>
+      tasks: Array as unknown as Array<TaskInterface>
     }
   },
   methods: {
