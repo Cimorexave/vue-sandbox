@@ -1,21 +1,21 @@
 <template>
-    <div class="task-item" v-if="task !== undefined ">
+    <div class="task-item" >
         <div class="is-done-bar" v-if="task.isDone"></div>
         {{ task.description }}
         <el-button class="done-btn" circle type="success"
-        @click=" task.isDone = !task.isDone " v-if="task !== undefined ">
+        @click="$emit('check-done')" v-if="task !== undefined ">
             <el-icon><Check  /></el-icon>
         </el-button>
     </div>
 </template>
 
 <script lang="ts">
-    import {defineComponent} from "vue";
+    import {defineComponent, PropType} from "vue";
     
     export default defineComponent({
         name: "TaskComponent",
         props: {
-            task: Object,
+            task: Object as PropType<{id: number, description: string, isDone: boolean}>
         }
     })
 </script>

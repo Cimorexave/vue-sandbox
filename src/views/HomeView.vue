@@ -52,7 +52,7 @@ export default defineComponent({
     return {
       isDialogOpen: false,
       newTaskValue: "",
-      tasks: [{}],
+      tasks: Array as unknown as Array<{id: number, description: string, isDone: boolean}>
     }
   },
   methods: {
@@ -74,6 +74,8 @@ export default defineComponent({
       this.newTaskValue= "";
       this.isDialogOpen = false;
     }
+  },
+  emits: {
   }
 });
 </script>
