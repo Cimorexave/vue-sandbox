@@ -1,11 +1,17 @@
 <template>
-    <div class="task-item" >
+    <div class="task-item" v-if=" task.description !== '' " >
         <div class="is-done-bar" v-if="task.isDone"></div>
         {{ task.description }}
-        <el-button class="done-btn" circle type="success"
-        @click="$emit('check-done', task.id)" v-if="task !== undefined ">
-            <el-icon><Check  /></el-icon>
-        </el-button>
+        <div class="actions">
+            <el-button class="done-btn" circle type="success"
+            @click="$emit('check-done', task.id)" >
+                <el-icon><Check  /></el-icon>
+            </el-button>
+            <el-button class="delete-btn" circle type="danger"
+            @click="$emit('delete-task', task.id)" >
+                <el-icon><Close /></el-icon>
+            </el-button>
+        </div>
     </div>
 </template>
 
@@ -31,11 +37,12 @@
 
     .task-item {
         display: flex;
+        gap: 0.5em;
         position: relative;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: 0 1em;
+        padding: 0.5em 1em;
         min-height: 3em;
         border-bottom:  1px solid darkseagreen;
     }
@@ -45,5 +52,9 @@
         height: 100%;
         width: 5px;
         background-color: $green-clr;
+    }
+    .actions {
+        display: flex;
+        gap: 3px;
     }
 </style>
