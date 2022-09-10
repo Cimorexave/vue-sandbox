@@ -6,6 +6,7 @@ const store = createStore({
     tasks: [{id: 0, description: "", isDone: false}]
   },
   getters: {
+    getStateFromStore: state => state.tasks
   },
   mutations: {
     //synchronous
