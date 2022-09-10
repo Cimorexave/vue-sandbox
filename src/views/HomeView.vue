@@ -30,7 +30,7 @@
     </template>
     <div v-if="tasks.length < 2">You have no tasks</div>
     <div v-else v-for=" task in tasks" :key="task.id" class="items">
-      <Task  :task="task" />
+      <Task @check-done="checkTaskDone" :task="task" />
     </div>
     </el-card>
   </div>
@@ -53,7 +53,7 @@ export default defineComponent({
     return {
       isDialogOpen: false,
       newTaskValue: "",
-      tasks: Array as unknown as Array<TaskInterface>
+      tasks: [{id: 0, description: "", isDone: false}]
     }
   },
   methods: {
@@ -64,6 +64,11 @@ export default defineComponent({
         description: this.newTaskValue,
         isDone: false,
       })
+      // this.tasks = [...this.tasks, {
+      //   id: this.tasks.length +1,
+      //   description: this.newTaskValue,
+      //   isDone: false,
+      // } ]
 
       //notifying the user that the task was added
       ElMessage({
@@ -74,9 +79,11 @@ export default defineComponent({
       //clear the input & exit the dialog
       this.newTaskValue= "";
       this.isDialogOpen = false;
+    },
+    checkTaskDone(id: number) {
+      this.tasks.filter(task => task.id === id)[0].isDone = 
+      !this.tasks.filter(task => task.id === id)[0].isDone ;
     }
-  },
-  emits: {
   }
 });
 </script>

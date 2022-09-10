@@ -3,7 +3,7 @@
         <div class="is-done-bar" v-if="task.isDone"></div>
         {{ task.description }}
         <el-button class="done-btn" circle type="success"
-        @click="$emit('check-done')" v-if="task !== undefined ">
+        @click="$emit('check-done', task.id)" v-if="task !== undefined ">
             <el-icon><Check  /></el-icon>
         </el-button>
     </div>
