@@ -64,11 +64,12 @@ export default defineComponent({
         description: this.newTaskValue,
         isDone: false,
       })
-      // this.tasks = [...this.tasks, {
-      //   id: this.tasks.length +1,
-      //   description: this.newTaskValue,
-      //   isDone: false,
-      // } ]
+      //submit the new task to store
+      this.$store.commit('addTask', {
+        id: this.tasks.length +1,
+        description: this.newTaskValue,
+        isDone: false,
+      })
 
       //notifying the user that the task was added
       ElMessage({
