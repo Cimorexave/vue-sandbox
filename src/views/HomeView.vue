@@ -87,15 +87,18 @@ export default defineComponent({
     },
     checkTaskDone(id: number) {
 
-      this.tasks.filter(task => task.id === id)[0].isDone = 
-      !this.tasks.filter(task => task.id === id)[0].isDone ;
+      //check the task done in the store
+      this.$store.commit('checkTaskDone', id);
+
+      // this.tasks.filter(task => task.id === id)[0].isDone = 
+      // !this.tasks.filter(task => task.id === id)[0].isDone ;
     },
     deleteTask(id: number) {
 
       //remove the task in store 
       this.$store.commit('removeTask', id)
 
-      this.tasks = this.tasks.filter(task => task.id !== id);
+      // this.tasks = this.tasks.filter(task => task.id !== id);
     }
   }
 });
