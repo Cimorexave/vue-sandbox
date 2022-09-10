@@ -30,7 +30,7 @@
     </template>
     <div v-if="tasks.length < 2">You have no tasks</div>
     <div v-else v-for=" task in tasks" :key="task.id" class="items">
-      <Task @check-done="checkTaskDone" :task="task" />
+      <Task @delete-task=" deleteTask " @check-done="checkTaskDone" :task="task" />
     </div>
     </el-card>
   </div>
@@ -83,6 +83,9 @@ export default defineComponent({
     checkTaskDone(id: number) {
       this.tasks.filter(task => task.id === id)[0].isDone = 
       !this.tasks.filter(task => task.id === id)[0].isDone ;
+    },
+    deleteTask(id: number) {
+      this.tasks = this.tasks.filter(task => task.id !== id);
     }
   }
 });
