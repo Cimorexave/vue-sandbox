@@ -97,8 +97,10 @@ export default defineComponent({
 
       //remove the task in store 
       this.$store.commit('removeTask', id)
-
-      // this.tasks = this.tasks.filter(task => task.id !== id);
+      // *** Bug Detected; needs further research:
+      // the task in the store is removed but it's not updated reactively
+      // on the tasks data object in the view/component
+      this.tasks = this.tasks.filter(task => task.id !== id);
     }
   }
 });
