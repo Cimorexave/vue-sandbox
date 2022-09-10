@@ -10,7 +10,7 @@ const store = createStore({
   mutations: {
     //synchronous
     addTask: (state, payload) => state.tasks.push(payload),
-    removeTask: (state, payload) => state.tasks.filter(task => task.id !== payload.id),
+    removeTask: (state, id) => state.tasks.filter(task => task.id !== id),
   },
   actions: {
   },
