@@ -49,6 +49,10 @@ export default defineComponent({
   components: {
     Task,
   },
+  mounted() {
+    //get the tasks from the store on mount 
+    this.tasks =  this.$store.getters.getStateFromStore;
+  },
   data() {
     return {
       isDialogOpen: false,
@@ -59,11 +63,11 @@ export default defineComponent({
   methods: {
     handleSubmit() {
       //submit it to data
-      this.tasks.push({
-        id: this.tasks.length +1,
-        description: this.newTaskValue,
-        isDone: false,
-      })
+      // this.tasks.push({
+      //   id: this.tasks.length +1,
+      //   description: this.newTaskValue,
+      //   isDone: false,
+      // })
       //submit the new task to store
       this.$store.commit('addTask', {
         id: this.tasks.length +1,
